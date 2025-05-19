@@ -10,7 +10,7 @@ payments as (
 order_amounts as (
     select 
         order_id,
-        sum(amount) as amount
+        sum(nvl(amount,0)) as amount
     from payments
     where status = 'success'
     group by order_id
@@ -21,6 +21,6 @@ select
     orders.customer_id,
     order_amounts.amount
 from orders
-     left join order_amounts  using(order_id)
+     left join order_amounts using(order_id)
 )
 select * from final
