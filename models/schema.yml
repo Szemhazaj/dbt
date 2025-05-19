@@ -41,3 +41,10 @@ models:
               field: customer_id
   - name: stg_stripe__payments
     description: This model cleans up payments data
+    columns:
+      - name: payment_id
+      - name: order_id
+      - name: paymentmethod
+      - name: status
+      - name: amount
+      - name: created
