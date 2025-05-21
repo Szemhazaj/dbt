@@ -14,7 +14,7 @@ models:
       - name: lifetime_value
         description: The total amount a customer has spent at jaffle_shop
         tests:
-          - not null
+          - not_null
   - name: fct_orders
     description: Order info with total payment
     columns:
@@ -22,7 +22,7 @@ models:
         description: Primary key
         tests:
           - unique
-          - not null
+          - not_null
       - name: customer_id
       - name: amount
 
