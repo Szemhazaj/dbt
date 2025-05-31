@@ -10,6 +10,11 @@ sources:
             description: One record per customer.
           - name: orders
             description: One record per order. Includes cancelled and deleted orders.
+            freshness:
+              warn_after:
+                count: 24
+                period: hour
+            loaded_at_field: _ETL_LOADED_AT
     - name: stripe
       description: schema with payments
       database: raw
